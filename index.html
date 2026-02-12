@@ -602,9 +602,6 @@ function toggleMenu(){
 <!-- ABOUT SECTION -->
 <section id="about" class="about-lux">
 
-  <!-- OUTER FRAME GLOW -->
-  <div class="about-outer-glow"></div>
-
   <div class="about-container">
 
 
@@ -789,52 +786,6 @@ section{
     rgba(255,255,255,0.02)
   );
   pointer-events:none;
-}
-
-/* ===============================
-   OUTER FRAME GLOW
-=================================*/
-.about-outer-glow{
-  position:absolute;
-  inset:30px;
-  border-radius:24px;
-  pointer-events:none;
-  overflow:hidden;
-}
-
-/* Static Frame */
-.about-outer-glow::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:24px;
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 0 80px rgba(0,194,168,0.06);
-}
-.about-lux{
-  will-change: transform;
-}
-
-/* Travelling Light */
-.about-outer-glow::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:24px;
-  padding:2px;
-  background:linear-gradient(90deg, transparent, #00C2A8, transparent);
-  background-size:300% 300%;
-  animation:aboutFrameMove 20s linear infinite;
-
-
-  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
-}
-
-@keyframes aboutFrameMove{
-  0%{background-position:0% 50%;}
-  100%{background-position:300% 50%;}
 }
 
 /* ===============================
@@ -1023,9 +974,6 @@ document.addEventListener("DOMContentLoaded", function(){
 <!-- FOUNDER SECTION -->
 <section id="founder" class="founder-section">
 
-  <!-- OUTER FRAME GLOW -->
-  <div class="founder-outer-frame"></div>
-
   <div class="founder-container">
 
     <!-- LEFT SIDE -->
@@ -1095,58 +1043,6 @@ document.addEventListener("DOMContentLoaded", function(){
   padding:140px 8%;
   overflow:hidden;
 }
-
-/* OUTER FRAME GLOW */
-.founder-outer-frame{
-  position:absolute;
-  inset:25px;
-  border-radius:22px;
-  pointer-events:none;
-  z-index:0;
-  overflow:hidden;
-}
-
-/* Base Border */
-.founder-outer-frame::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:22px;
-  border:1px solid rgba(11,31,58,0.15);
-  box-shadow:0 0 50px #00C2A8(11, 255, 222, 0.05);
-}
-
-/* Travelling Light */
-.founder-outer-frame::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:22px;
-  padding:2px;
-
-  background:linear-gradient(
-    90deg,
-    transparent,
-    #00C2A8,
-    transparent
-  );
-
-  background-size:300% 300%;
-  animation:founderOuterTravel 2s linear infinite;
-
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
-}
-
-@keyframes founderOuterTravel{
-  0%{background-position:0% 50%;}
-  100%{background-position:300% 50%;}
-}
-
 /* CONTAINER */
 .founder-container{
   position:relative;
@@ -1417,24 +1313,48 @@ document.addEventListener("DOMContentLoaded", function(){
           privacy-first analytics model.
         </p>
 
-        <button class="contact-btn" onclick="openMail()">
-          CONTACT AFCJ
-        </button>
+        <button class="contact-btn" onclick="showForm()">
+  CONTACT AFCJ
+</button>
+
+
 
         <div class="response-time">
           UK response within 1–2 business days
         </div>
-<!-- OUTER FRAME GLOW -->
-<div class="outer-frame"></div>
       </div>
 
     </div>
 
   </div>
+<div class="contact-modal" id="contactModal">
+  <div class="modal-content">
+    <h3>Confidential Enquiry</h3>
+    <textarea placeholder="Write your message here..."></textarea>
+    <button onclick="closeForm()">Close</button>
+  </div>
+</div>
 
 </section>
 
 <style>
+.contact-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.modal-content{
+  background:white;
+  padding:30px;
+  width:90%;
+  max-width:400px;
+  border-radius:10px;
+}
 
 /* TAG CONTAINER */
 .contact-tags{
@@ -1466,37 +1386,6 @@ document.addEventListener("DOMContentLoaded", function(){
   overflow:hidden;
 }
 
-/* TRAVELLING LIGHT BORDER */
-.founder-badge::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:30px;
-  padding:2px;
-
-  background:linear-gradient(
-    90deg,
-    transparent,
-    #ffffff,
-    transparent
-  );
-
-  background-size:300% 300%;
-  animation:badgeTravel 4s linear infinite;
-
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
-}
-
-/* ANIMATION */
-@keyframes badgeTravel{
-  0%{background-position:0% 50%;}
-  100%{background-position:300% 50%;}
-}
 
 /* HOVER EFFECT */
 .founder-badge:hover{
@@ -1518,35 +1407,6 @@ document.addEventListener("DOMContentLoaded", function(){
   backdrop-filter:blur(8px);
 }
 
-/* TRAVELLING LIGHT BORDER */
-.tag-box::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:8px;
-  padding:1.5px;
-  background:linear-gradient(
-      90deg,
-      transparent,
-      #08ffde,
-      transparent
-  );
-  background-size:300% 300%;
-  animation:travelBorder 2.5s linear infinite;
-
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
-}
-
-/* LIGHT ANIMATION */
-@keyframes travelBorder{
-  0%{background-position:0% 50%;}
-  100%{background-position:300% 50%;}
-}
-
 /* HOVER EFFECT (subtle) */
 .tag-box:hover{
   background:rgba(0,194,168,0.15);
@@ -1563,15 +1423,7 @@ document.addEventListener("DOMContentLoaded", function(){
   overflow:hidden;
 }
 
-/* OUTER FRAME GLOW */
-.outer-frame{
-  position:absolute;
-  inset:20px;
-  border:1px solid #00C2A8(255, 255, 255);
-  border-radius:18px;
-  pointer-events:none;
-  box-shadow:0 0 60px rgba(0,194,168,0.08);
-}
+
 
 /* WRAPPER */
 .contact-wrapper{
@@ -1686,20 +1538,20 @@ document.addEventListener("DOMContentLoaded", function(){
   margin-bottom:18px;
 }
 
-/* BUTTON */
 .contact-btn{
+  display:inline-block;
   margin-top:26px;
   padding:14px 42px;
   font-size:14px;
   font-weight:800;
   letter-spacing:1.5px;
   background:#00C2A8;
-  border:none;
   border-radius:6px;
   color:#0A0F1C;
-  cursor:pointer;
+  text-decoration:none;
   transition:0.3s ease;
 }
+
 
 .contact-btn:hover{
   transform:translateY(-3px);
@@ -1850,98 +1702,207 @@ document.addEventListener("DOMContentLoaded", function(){
     font-size:11px;
   }
 
-
-/* OUTER FRAME */
-.outer-frame{
-  position:absolute;
-  inset:20px;
-  border-radius:20px;
-  pointer-events:none;
-  z-index:1;
-  overflow:hidden;
+</style>
+<script>
+function showForm(){
+  document.getElementById("contactModal").style.display="flex";
 }
 
-/* BASE SOFT BORDER */
-.outer-frame::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.12);
-  box-shadow:0 0 60px rgba(0,194,168,0.08);
+function closeForm(){
+  document.getElementById("contactModal").style.display="none";
 }
-html{
-  scroll-behavior:smooth;
+</script>
+<!-- CONTACT SECTION -->
+<section id="contact" class="afcj-contact">
+
+  <div class="contact-wrapper">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-left">
+      <h3 class="contact-title">Confidential Contact</h3>
+      <div class="contact-line"></div>
+
+      <p class="contact-text">
+        AFCJ operates as a privacy-first recruitment analytics
+        infrastructure platform for UK agencies and enterprise teams.
+      </p>
+
+      <p class="contact-text muted">
+        All enquiries are handled confidentially and relate to
+        product evaluation, pilot deployment, governance review,
+        or strategic partnership discussion.
+      </p>
+
+      <div class="trust-strip">
+        Signal Retention · Cohort Privacy · Contract-Aware Controls
+      </div>
+    </div>
+<!-- TAGS -->
+<div class="contact-tags">
+  <div class="tag-box">Privacy-Engineered</div>
+  <div class="tag-box">GDPR Aligned</div>
+  <div class="tag-box">AI Governance Ready</div>
+  <div class="tag-box">UK Focused</div>
+</div>
+    <!-- RIGHT SIDE -->
+    <div class="contact-right">
+
+      <div class="action-box">
+
+        <div class="privacy-badge">
+          Secure Channel
+        </div>
+
+        <h4>Start a Confidential Discussion</h4>
+
+        <p>
+          Request platform access, pilot validation,
+          or a technical briefing on the AFCJ
+          privacy-first analytics model.
+        </p>
+
+        <!-- WORKING MAIL BUTTON -->
+        <a 
+        class="contact-btn"
+        href="mailto:contact@afcj.co.uk?subject=Confidential%20Enquiry%20-%20AFCJ%20Recruitment%20Analytics&body=Hello%20AFCJ%20Team,%0A%0AI%20would%20like%20to%20request%20further%20information%20regarding:%0A%0A-%20Platform%20Demonstration%0A-%20Pilot%20Validation%0A-%20Technical%20Architecture%20Briefing%0A-%20Governance%20Review%0A%0AOrganisation:%0ARole:%0APreferred%20Contact%20Method:%0A%0APlease%20advise%20on%20next%20steps.%0A%0AKind%20regards,"
+        >
+        CONTACT AFCJ
+        </a>
+
+        <div class="response-time">
+          UK response within 1–2 business days
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.afcj-contact{
+  padding:120px 8%;
+  background:linear-gradient(135deg,#0B1F3A,#1E3A8A);
+  color:#ffffff;
 }
 
-section{
-  scroll-margin-top:100px;
+.contact-wrapper{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.4fr 0.8fr;
+  gap:80px;
+  align-items:center;
 }
 
-/* TRAVELLING LIGHT BORDER */
-.outer-frame::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  padding:2px;
-
-  background:linear-gradient(
-    90deg,
-    transparent,
-    #00C2A8,
-    transparent
-  );
-
-  background-size:300% 300%;
-  animation:outerTravel 2s linear infinite;
-
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
+.contact-title{
+  font-size:36px;
+  font-weight:800;
+  margin-bottom:14px;
 }
 
-/* ANIMATION */
-@keyframes outerTravel{
-  0%{background-position:0% 50%;}
-  100%{background-position:300% 50%;}
+.contact-line{
+  width:80px;
+  height:4px;
+  background:#00C2A8;
+  margin-bottom:24px;
+}
+
+.contact-text{
+  font-size:16px;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+.contact-text.muted{
+  opacity:0.8;
+}
+
+.trust-strip{
+  margin-top:30px;
+  padding:12px 18px;
+  background:rgba(0,194,168,0.15);
+  border-left:4px solid #00C2A8;
+  font-size:13px;
+}
+
+.contact-right{
+  display:flex;
+  justify-content:center;
+}
+
+.action-box{
+  padding:45px;
+  background:rgba(255,255,255,0.08);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.2);
+  text-align:center;
+}
+
+.privacy-badge{
+  display:inline-block;
+  background:#00C2A8;
+  color:#0B1F3A;
+  font-weight:700;
+  padding:6px 16px;
+  border-radius:30px;
+  font-size:12px;
+  margin-bottom:18px;
+}
+
+.contact-btn{
+  display:inline-block;
+  margin-top:24px;
+  padding:14px 40px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1px;
+  background:#00C2A8;
+  border-radius:6px;
+  color:#0B1F3A;
+  text-decoration:none;
+  transition:0.3s ease;
+}
+
+.contact-btn:hover{
+  background:#00e0c1;
+  transform:translateY(-3px);
+}
+
+.response-time{
+  margin-top:14px;
+  font-size:12px;
+  opacity:0.8;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .contact-wrapper{
+    grid-template-columns:1fr;
+    gap:40px;
+    text-align:center;
+  }
+
+  .contact-title{
+    font-size:24px;
+  }
+
+  .action-box{
+    padding:30px;
+  }
+
+  .contact-btn{
+    width:100%;
+    max-width:260px;
+  }
+
 }
 
 </style>
-
-<script>
-function openMail(){
-
-  const subject = encodeURIComponent(
-    "Confidential Enquiry – AFCJ Privacy-First Recruitment Analytics"
-  );
-
-  const body = encodeURIComponent(
-`Hello AFCJ Team,
-
-I would like to request further information regarding:
-
-• Platform demonstration
-• Pilot validation opportunity
-• Technical architecture briefing
-• Governance & compliance review
-
-Organisation:
-Role:
-Preferred Contact Method:
-
-Please advise on next steps.
-
-Kind regards,`
-  );
-
-  window.location.href =
-  "mailto:contact@afcj.co.uk?subject=" + subject + "&body=" + body;
-}
-</script>
 
 
 <footer class="afcj-footer">
