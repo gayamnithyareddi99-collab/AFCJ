@@ -1184,7 +1184,7 @@ document.addEventListener("DOMContentLoaded", function(){
 .founder-tag{
   font-size:14px;
   letter-spacing:1px;
-  color:#666;
+  color:#00C2A8;
   margin-bottom:26px;
 }
 
@@ -1270,7 +1270,7 @@ document.addEventListener("DOMContentLoaded", function(){
 .founder-highlight{
   padding:18px;
   background:#f4f7fb;
-  border-left:6px solid #e5ebea;
+  border-left:6px solid #00C2A8;
   font-size:14px;
 }
 
@@ -1714,75 +1714,128 @@ document.addEventListener("DOMContentLoaded", function(){
 }
 
 /* ===============================
-   MOBILE RESPONSIVE CONTACT
+   FULL MOBILE RESPONSIVE CONTACT
 =================================*/
 @media (max-width: 900px){
 
   /* SECTION */
   .afcj-contact{
-    padding:90px 6%;
+    padding:80px 5%;
   }
 
   /* OUTER FRAME */
   .outer-frame{
-    inset:12px;
-    border-radius:16px;
+    inset:10px;
+    border-radius:14px;
   }
 
-  /* STACK LAYOUT */
+  /* WRAPPER STACK */
   .contact-wrapper{
     grid-template-columns:1fr;
-    gap:40px;
+    gap:35px;
     text-align:center;
   }
 
   /* LEFT SIDE */
+  .contact-left{
+    width:100%;
+  }
+
   .contact-title{
-    font-size:26px;
+    font-size:24px;
     line-height:1.3;
+    margin-bottom:12px;
   }
 
   .contact-line{
-    margin:0 auto 22px;
+    width:70px;
+    height:4px;
+    margin:0 auto 20px;
   }
 
   .contact-text{
-    font-size:15px;
-    line-height:1.8;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:16px;
   }
 
-  /* TAGS CENTER */
+  /* TAGS */
   .contact-tags{
     justify-content:center;
-    gap:12px;
+    gap:10px;
+    margin-top:20px;
   }
 
-  .contact-tags span,
   .tag-box{
-    font-size:12px;
-    padding:8px 14px;
+    font-size:11px;
+    padding:7px 12px;
+    border-radius:6px;
   }
 
   /* TRUST STRIP */
   .trust-strip{
-    font-size:12px;
-    padding:12px;
+    margin-top:25px;
+    padding:10px 12px;
+    font-size:11px;
+    letter-spacing:0.5px;
   }
 
-  /* RIGHT ACTION BOX */
+  /* RIGHT SIDE */
+  .contact-right{
+    width:100%;
+    justify-content:center;
+  }
+
+  /* ACTION BOX */
   .action-box{
-    padding:30px;
-    border-radius:14px;
+    padding:25px 20px;
+    border-radius:12px;
+    width:100%;
+  }
+
+  .privacy-badge{
+    font-size:11px;
+    padding:5px 14px;
+    margin-bottom:15px;
   }
 
   .action-box h4{
-    font-size:18px;
+    font-size:17px;
+    margin-bottom:10px;
   }
 
   .action-box p{
-    font-size:14px;
-    line-height:1.7;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:18px;
   }
+
+  /* BUTTON */
+  .contact-btn{
+    width:100%;
+    max-width:260px;
+    padding:14px 0;
+    font-size:13px;
+    letter-spacing:1px;
+    margin:0 auto;
+  }
+
+  .response-time{
+    font-size:10px;
+    margin-top:12px;
+  }
+
+  /* PERFORMANCE FIX */
+  .border-light{
+    animation:none;
+  }
+
+  .outer-frame::before{
+    animation:none;
+  }
+
+}
+
 
   /* BUTTON FULL WIDTH */
   .contact-btn{
@@ -1796,8 +1849,6 @@ document.addEventListener("DOMContentLoaded", function(){
   .response-time{
     font-size:11px;
   }
-
-}
 
 
 /* OUTER FRAME */
@@ -1818,6 +1869,13 @@ document.addEventListener("DOMContentLoaded", function(){
   border-radius:20px;
   border:1px solid rgba(255,255,255,0.12);
   box-shadow:0 0 60px rgba(0,194,168,0.08);
+}
+html{
+  scroll-behavior:smooth;
+}
+
+section{
+  scroll-margin-top:100px;
 }
 
 /* TRAVELLING LIGHT BORDER */
@@ -1855,10 +1913,12 @@ document.addEventListener("DOMContentLoaded", function(){
 </style>
 
 <script>
-
 function openMail(){
-  const subject = encodeURIComponent("Confidential Enquiry – AFCJ Privacy-First Recruitment Analytics");
-  
+
+  const subject = encodeURIComponent(
+    "Confidential Enquiry – AFCJ Privacy-First Recruitment Analytics"
+  );
+
   const body = encodeURIComponent(
 `Hello AFCJ Team,
 
@@ -1869,15 +1929,18 @@ I would like to request further information regarding:
 • Technical architecture briefing
 • Governance & compliance review
 
+Organisation:
+Role:
+Preferred Contact Method:
+
 Please advise on next steps.
 
-Kind regards,
-`
+Kind regards,`
   );
 
-  window.location.href = `mailto:contact@afcj.co.uk?subject=${subject}&body=${body}`;
+  window.location.href =
+  "mailto:contact@afcj.co.uk?subject=" + subject + "&body=" + body;
 }
-
 </script>
 
 
