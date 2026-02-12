@@ -117,35 +117,8 @@ nav{
     justify-content:center;
   }
 }
-<!-- ===============================
-        ADVANCED NAVBAR
-=================================-->
-<nav class="afcj-nav">
-
-  <div class="logo">AFCJ</div>
-
-  <!-- NAV LINKS -->
-  <div class="nav-links" id="navLinks">
-    <a href="#home" class="nav-item active">Home</a>
-    <a href="#about" class="nav-item">About</a>
-    <a href="#founder" class="nav-item">Founder</a>
-    <a href="#process" class="nav-item">Process</a>
-    <a href="#contact" class="nav-item">Contact</a>
-  </div>
-
-  <!-- HAMBURGER -->
-  <div class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-</nav>
-
-<style>
-
 /* ===============================
-   NAV BASE
+   NAVBAR BASE
 =================================*/
 .afcj-nav{
   position:fixed;
@@ -153,23 +126,16 @@ nav{
   left:0;
   right:0;
   height:80px;
+  background:rgba(0,194,168,0.9);
+  backdrop-filter:blur(15px);
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:0 60px;
-  background:rgba(0, 194, 168, 0.85);
-  backdrop-filter:blur(15px);
+  z-index:1000;
   transition:0.4s ease;
-  z-index:999;
 }
 
-/* Scroll effect */
-.afcj-nav.scrolled{
-  background:#00C2A8;
-  box-shadow:0 8px 25px rgba(0,0,0,0.15);
-}
-
-/* LOGO */
 .logo{
   font-weight:900;
   font-size:20px;
@@ -177,43 +143,21 @@ nav{
   color:#0B1F3A;
 }
 
-/* NAV LINKS */
+/* DESKTOP LINKS */
 .nav-links{
   display:flex;
   gap:35px;
 }
 
-.nav-item{
-  position:relative;
+.nav-links a{
   text-decoration:none;
   font-weight:600;
   color:#0B1F3A;
   transition:0.3s ease;
 }
 
-/* Animated underline */
-.nav-item::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0%;
-  height:2px;
-  background:#0B1F3A;
-  transition:0.3s ease;
-}
-
-.nav-item:hover::after{
-  width:100%;
-}
-
-/* Active link */
-.nav-item.active{
-  font-weight:800;
-}
-
-.nav-item.active::after{
-  width:100%;
+.nav-links a:hover{
+  opacity:0.7;
 }
 
 /* ===============================
@@ -224,19 +168,20 @@ nav{
   flex-direction:column;
   gap:6px;
   cursor:pointer;
+  z-index:1100;
 }
 
 .menu-toggle span{
-  width:26px;
+  width:28px;
   height:3px;
   background:#0B1F3A;
-  border-radius:3px;
+  border-radius:4px;
   transition:0.3s ease;
 }
 
 /* Animate to X */
 .menu-toggle.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
+  transform:rotate(45deg) translate(6px,6px);
 }
 .menu-toggle.active span:nth-child(2){
   opacity:0;
@@ -258,95 +203,59 @@ nav{
     display:flex;
   }
 
+  /* Fullscreen mobile menu */
   .nav-links{
-    position:absolute;
-    top:80px;
-    right:0;
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100vh;
     background:#00C2A8;
     flex-direction:column;
-    width:230px;
-    padding:30px;
-    gap:20px;
-    transform:translateX(100%);
+    padding:120px 40px;
+    gap:30px;
     transition:0.4s ease;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    box-shadow:-10px 0 30px rgba(0,0,0,0.2);
   }
 
   .nav-links.show{
-    transform:translateX(0);
+    right:0;
+  }
+
+  .nav-links a{
+    font-size:18px;
   }
 
 }
 
-</style>
-
-<script>
-
 /* ===============================
-   TOGGLE MOBILE MENU
+   OVERLAY
 =================================*/
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+.mobile-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(4px);
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s ease;
+  z-index:900;
+}
 
-menuToggle.addEventListener("click", ()=>{
-  navLinks.classList.toggle("show");
-  menuToggle.classList.toggle("active");
-});
-
-/* Close mobile when clicking link */
-document.querySelectorAll(".nav-item").forEach(link=>{
-  link.addEventListener("click", ()=>{
-    navLinks.classList.remove("show");
-    menuToggle.classList.remove("active");
-  });
-});
-
-/* ===============================
-   ACTIVE SECTION ON SCROLL
-=================================*/
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-item");
-
-window.addEventListener("scroll", ()=>{
-
-  let current = "";
-
-  sections.forEach(section=>{
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
-
-    if(pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight){
-      current = section.getAttribute("id");
-    }
-  });
-
-  navItems.forEach(link=>{
-    link.classList.remove("active");
-    if(link.getAttribute("href") === "#" + current){
-      link.classList.add("active");
-    }
-  });
-
-  /* Add scroll background */
-  if(window.scrollY > 50){
-    document.querySelector(".afcj-nav").classList.add("scrolled");
-  }else{
-    document.querySelector(".afcj-nav").classList.remove("scrolled");
-  }
-
-});
-
-</script>
+.mobile-overlay.show{
+  opacity:1;
+  visibility:visible;
+}
 
 </style>
 </head>
 
 <body>
 
-<nav>
+<nav class="afcj-nav">
+
   <div class="logo">AFCJ</div>
 
-  <!-- NAV LINKS -->
   <div class="nav-links" id="navLinks">
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
@@ -355,13 +264,18 @@ window.addEventListener("scroll", ()=>{
     <a href="#contact">Contact</a>
   </div>
 
-  <!-- HAMBURGER MENU -->
-  <div class="menu-toggle" onclick="toggleMenu()">
+  <!-- HAMBURGER -->
+  <div class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
     <span></span>
   </div>
+
 </nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
 
 <!-- ===============================
      HOME SECTION
@@ -816,6 +730,41 @@ window.addEventListener("scroll", ()=>{
 function toggleMenu(){
   document.getElementById("navLinks").classList.toggle("show");
 }
+</script>
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const mobileOverlay = document.getElementById("mobileOverlay");
+
+menuToggle.addEventListener("click", ()=>{
+
+  navLinks.classList.toggle("show");
+  menuToggle.classList.toggle("active");
+  mobileOverlay.classList.toggle("show");
+
+  document.body.classList.toggle("no-scroll");
+
+});
+
+/* Close when clicking overlay */
+mobileOverlay.addEventListener("click", ()=>{
+  navLinks.classList.remove("show");
+  menuToggle.classList.remove("active");
+  mobileOverlay.classList.remove("show");
+  document.body.classList.remove("no-scroll");
+});
+
+/* Close when clicking link */
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click", ()=>{
+    navLinks.classList.remove("show");
+    menuToggle.classList.remove("active");
+    mobileOverlay.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+  });
+});
+
 </script>
 
 
