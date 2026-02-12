@@ -17,6 +17,15 @@
   --white:#ffffff;
 }
 
+/* GLOBAL */
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  font-family: "Segoe UI", sans-serif;
+  background:var(--light);
+  color:var(--primary);
+}
+
 /* NAVBAR */
 nav{
   position:fixed;
@@ -24,13 +33,56 @@ nav{
   left:0;
   right:0;
   height:80px;
-  background:rgba(255,255,255,0.9);
+  background:rgba(0, 194, 168, 0.884);
   backdrop-filter:blur(12px);
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:0 60px;
   z-index:999;
+}
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  width:25px;
+  height:3px;
+  background:var(--primary);
+  border-radius:3px;
+}
+
+/* MOBILE MENU */
+@media(max-width:900px){
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:80px;
+    right:0;
+    background:rgba(0, 194, 168, 0.95);
+    flex-direction:column;
+    width:220px;
+    padding:25px;
+    display:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .nav-links a{
+    margin:12px 0;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
 }
 
 .logo{
@@ -52,464 +104,43 @@ nav{
   color:var(--accent);
 }
 
+/* MOBILE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-right{
+    width:100%;
+  }
+  .hero-buttons{
+    justify-content:center;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
+<nav>
+  <div class="logo">AFCJ</div>
 
-
-<!-- ===============================
-        ULTRA MAGIC NAVBAR
-=================================-->
-<nav class="ultra-nav">
-
-  <!-- Animated Border Frame -->
-  <div class="nav-frame"></div>
-
-  <div class="ultra-logo">AFCJ</div>
-
-  <div class="ultra-links" id="ultraLinks">
-    <a href="#home" class="ultra-item active">Home</a>
-    <a href="#about" class="ultra-item">About</a>
-    <a href="#platform" class="ultra-item">Platform</a>
-    <a href="#technology" class="ultra-item">Technology</a>
-    <a href="#contact" class="ultra-item">Contact</a>
+  <!-- NAV LINKS -->
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#founder">Founder</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <!-- Mobile Toggle -->
-  <div class="ultra-menu" onclick="toggleUltraMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+  <!-- HAMBURGER MENU -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-
 </nav>
-
-<style>
-
-/* ===============================
-   NAV BASE
-=================================*/
-.ultra-nav{
-  position:fixed;
-  top:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  max-width:1250px;
-  height:78px;
-  background:rgba(11,31,58,0.75);
-  backdrop-filter:blur(25px);
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 50px;
-  z-index:1000;
-  overflow:hidden;
-}
-
-/* ===============================
-   NEON ANIMATED FRAME
-=================================*/
-.nav-frame{
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  padding:2px;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    #00C2A8,
-    #00E0C1,
-    #00C2A8,
-    transparent
-  );
-  background-size:400% 400%;
-  animation:neonBorder 8s linear infinite;
-
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
-}
-
-@keyframes neonBorder{
-  0%{background-position:0% 50%;}
-  100%{background-position:400% 50%;}
-}
-
-/* ===============================
-   LOGO
-=================================*/
-.ultra-logo{
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:#00C2A8;
-  text-shadow:0 0 20px rgba(0,194,168,0.8);
-}
-
-/* ===============================
-   LINKS
-=================================*/
-.ultra-links{
-  display:flex;
-  gap:35px;
-}
-
-.ultra-item{
-  position:relative;
-  text-decoration:none;
-  font-weight:600;
-  color:#ffffff;
-  padding:8px 18px;
-  border-radius:25px;
-  transition:0.3s ease;
-}
-
-/* NEON ACTIVE PILL */
-.ultra-item.active{
-  background:rgba(0,194,168,0.15);
-  box-shadow:
-    0 0 15px rgba(0,194,168,0.8),
-    inset 0 0 10px rgba(0,194,168,0.4);
-  color:#00E0C1;
-}
-
-/* MAGNETIC HOVER */
-.ultra-item:hover{
-  color:#00E0C1;
-  text-shadow:0 0 15px rgba(0,194,168,1);
-  transform:translateY(-2px);
-}
-
-/* ENERGY CORNER GLOW */
-.ultra-nav::before,
-.ultra-nav::after{
-  content:"";
-  position:absolute;
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  filter:blur(60px);
-  opacity:0.3;
-  z-index:-1;
-}
-
-.ultra-nav::before{
-  background:#00C2A8;
-  top:-40px;
-  left:-40px;
-}
-
-.ultra-nav::after{
-  background:#00E0C1;
-  bottom:-40px;
-  right:-40px;
-}
-
-/* ===============================
-   MOBILE
-=================================*/
-.ultra-menu{
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-
-.ultra-menu div{
-  width:26px;
-  height:3px;
-  background:#00C2A8;
-  border-radius:3px;
-}
-
-/* MOBILE PANEL */
-@media(max-width:900px){
-
-  .ultra-nav{
-    padding:0 25px;
-  }
-
-  .ultra-links{
-    position:absolute;
-    top:95px;
-    left:0;
-    right:0;
-    background:rgba(11,31,58,0.95);
-    backdrop-filter:blur(20px);
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-    padding:35px 0;
-    border-radius:18px;
-    display:none;
-    animation:slideDown 0.4s ease;
-  }
-
-  .ultra-links.show{
-    display:flex;
-  }
-
-  .ultra-menu{
-    display:flex;
-  }
-
-}
-
-@keyframes slideDown{
-  from{opacity:0; transform:translateY(-10px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-</style>
-
-<script>
-
-/* MOBILE TOGGLE */
-function toggleUltraMenu(){
-  document.getElementById("ultraLinks").classList.toggle("show");
-}
-
-/* ACTIVE SCROLL */
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".ultra-item");
-
-window.addEventListener("scroll", ()=>{
-
-  let current = "";
-
-  sections.forEach(section=>{
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
-
-    if(pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight){
-      current = section.getAttribute("id");
-    }
-  });
-
-  navItems.forEach(link=>{
-    link.classList.remove("active");
-    if(link.getAttribute("href").includes(current)){
-      link.classList.add("active");
-    }
-  });
-
-});
-
-</script>
-
-<!-- ===============================
-     PREMIUM NAVBAR
-=================================-->
-
-<nav class="navbar">
-
-
-
-</nav>
-
-<style>
-
-/* ===============================
-   NAVBAR BASE
-=================================*/
-.navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:80px;
-  background:#00C2A8; /* TEAL BACKGROUND */
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 60px;
-  z-index:999;
-  overflow:hidden;
-}
-
-/* TRAVELLING LIGHT EFFECT */
-.navbar::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.4),
-    transparent
-  );
-  animation:navLight 6s linear infinite;
-  opacity:0.4;
-}
-
-@keyframes navLight{
-  0%{transform:translateX(-100%);}
-  100%{transform:translateX(100%);}
-}
-
-/* LOGO */
-.logo{
-  font-weight:900;
-  font-size:22px;
-  letter-spacing:2px;
-  color:#0B1F3A;
-  z-index:2;
-}
-
-/* ===============================
-   DESKTOP NAV BOX STYLE
-=================================*/
-.nav-links{
-  display:flex;
-  gap:20px;
-  z-index:2;
-}
-
-/* MENU ITEM BASE */
-.nav-item{
-  position:relative;
-  text-decoration:none;
-  font-weight:700;
-  font-size:14px;
-  padding:12px 22px;
-  border-radius:8px;
-  color:#0B1F3A;
-  background:rgba(255,255,255,0.1);
-  overflow:hidden;
-  transition:0.3s ease;
-}
-
-/* TRAVELLING LIGHT BORDER */
-.nav-item::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:8px;
-  padding:1.5px;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    #ffffff,
-    transparent
-  );
-  background-size:300% 300%;
-  animation:menuLight 5s linear infinite;
-
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-
-  mask-composite:exclude;
-  -webkit-mask-composite:xor;
-}
-
-/* LIGHT ANIMATION */
-@keyframes menuLight{
-  0%{background-position:0% 50%;}
-  100%{background-position:300% 50%;}
-}
-
-/* HOVER EFFECT */
-.nav-item:hover{
-  background:#0B1F3A;
-  color:#ffffff;
-}
-
-/* ACTIVE STATE */
-.nav-item.active{
-  background:#0B1F3A;
-  color:#ffffff;
-  box-shadow:0 0 12px rgba(0,0,0,0.4);
-}
-
-
-/* ===============================
-   MOBILE MENU
-=================================*/
-.menu-dots{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-  color:#0B1F3A;
-  z-index:2;
-}
-
-/* MOBILE DROPDOWN */
-@media(max-width:900px){
-
-  .navbar{
-    padding:0 25px;
-  }
-
-  .nav-links{
-    position:absolute;
-    top:80px;
-    right:0;
-    background:#00C2A8;
-    flex-direction:column;
-    width:220px;
-    padding:20px;
-    display:none;
-    border-bottom-left-radius:10px;
-  }
-
-  .nav-links.show{
-    display:flex;
-  }
-
-  .nav-item{
-    padding:12px;
-  }
-
-  .menu-dots{
-    display:block;
-  }
-
-}
-
-</style>
-
-<script>
-
-/* MOBILE TOGGLE */
-function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("show");
-}
-
-/* ACTIVE SECTION HIGHLIGHT ON SCROLL */
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-item");
-
-window.addEventListener("scroll", () => {
-
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    const sectionHeight = section.clientHeight;
-
-    if(pageYOffset >= sectionTop){
-      current = section.getAttribute("id");
-    }
-  });
-
-  navItems.forEach(link => {
-    link.classList.remove("active");
-    if(link.getAttribute("href") === "#" + current){
-      link.classList.add("active");
-    }
-  });
-
-});
-
-</script>
 
 <!-- ===============================
      HOME SECTION
@@ -960,11 +591,16 @@ window.addEventListener("scroll", () => {
 }
 
 </style>
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
 
 
 
 <!-- ABOUT SECTION -->
-<section class="about-lux">
+<section id="about" class="about-lux">
 
   <!-- OUTER FRAME GLOW -->
   <div class="about-outer-glow"></div>
@@ -1037,6 +673,14 @@ window.addEventListener("scroll", () => {
 /* ===============================
    SECTION BASE
 =================================*/
+html{
+  scroll-behavior:smooth;
+}
+
+section{
+  scroll-margin-top:100px;
+}
+
 .about-lux{
   position:relative;
   background:#000000;
@@ -1364,7 +1008,7 @@ aboutObserver.observe(aboutSection);
 
 
 <!-- FOUNDER SECTION -->
-<section class="founder-section">
+<section id="founder" class="founder-section">
 
   <!-- OUTER FRAME GLOW -->
   <div class="founder-outer-frame"></div>
@@ -1704,7 +1348,7 @@ aboutObserver.observe(aboutSection);
 </style>
 
 <!-- CONTACT SECTION -->
-<section class="afcj-contact">
+<section id="contact" class="afcj-contact">
 
   <!-- OUTER GLOW FRAME -->
   <div class="outer-frame"></div>
