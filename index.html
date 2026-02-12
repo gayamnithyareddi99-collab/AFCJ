@@ -26,6 +26,97 @@ body{
   color:var(--primary);
 }
 
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:80px;
+  background:rgba(0, 194, 168, 0.884);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 60px;
+  z-index:999;
+}
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  width:25px;
+  height:3px;
+  background:var(--primary);
+  border-radius:3px;
+}
+
+/* MOBILE MENU */
+@media(max-width:900px){
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:80px;
+    right:0;
+    background:rgba(0, 194, 168, 0.95);
+    flex-direction:column;
+    width:220px;
+    padding:25px;
+    display:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .nav-links a{
+    margin:12px 0;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+}
+
+.logo{
+  font-weight:800;
+  font-size:20px;
+  letter-spacing:2px;
+  color:var(--primary);
+}
+
+.nav-links a{
+  margin-left:28px;
+  text-decoration:none;
+  font-weight:600;
+  color:var(--primary);
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-right{
+    width:100%;
+  }
+  .hero-buttons{
+    justify-content:center;
+  }
+}
 <!-- ===============================
         ADVANCED NAVBAR
 =================================-->
@@ -247,6 +338,30 @@ window.addEventListener("scroll", ()=>{
 
 </script>
 
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">AFCJ</div>
+
+  <!-- NAV LINKS -->
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#founder">Founder</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- HAMBURGER MENU -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
 
 <!-- ===============================
      HOME SECTION
