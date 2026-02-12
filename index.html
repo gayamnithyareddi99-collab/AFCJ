@@ -131,6 +131,7 @@ nav{
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
     <a href="#founder">Founder</a>
+    <a href="#process">Process</a>
     <a href="#contact">Contact</a>
   </div>
 
@@ -185,7 +186,7 @@ nav{
   </div>
 </div>
       <div class="home-actions">
-        <a href="#about" class="btn-primary">Explore Platform</a>
+        <a href="#why" class="btn-primary">Why AFCJ</a>
         <a href="#contact" class="btn-secondary">Request Demo</a>
       </div>
 
@@ -1255,265 +1256,365 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 </style>
+<!-- ===============================
+     AFCJ PROCESS – CENTER MODEL
+=================================-->
+<section id="process" class="afcj-process-center">
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="afcj-contact">
+  <div class="process-container">
 
-  <!-- OUTER GLOW FRAME -->
-  <div class="outer-frame"></div>
+    <h2 class="process-title">
+      The AFCJ Intelligence Process
+    </h2>
 
-  <div class="contact-wrapper">
+    <div class="process-divider"></div>
 
-    <!-- LEFT SIDE -->
-    <div class="contact-left">
-      <h3 class="contact-title">Confidential Contact</h3>
-      <div class="contact-line"></div>
+    <p class="process-para">
+      AFCJ begins with secure, contract-aware integration across
+      Applicant Tracking Systems and recruitment CRM environments.
+      Rather than extracting raw candidate records for long-term storage,
+      the platform isolates behavioural recruitment signals within
+      controlled governance boundaries.
+    </p>
 
-      <p class="contact-text">
-        AFCJ operates as a privacy-first recruitment analytics infrastructure
-        platform for UK agencies and enterprise talent teams.
-      </p>
+    <p class="process-para">
+      These recruitment lifecycle events are transformed into
+      anonymised analytical representations engineered to preserve
+      decision-making intelligence while eliminating identity retention.
+      This ensures that organisations retain performance insight
+      without accumulating regulatory exposure.
+    </p>
 
-      <p class="contact-text muted">
-        All enquiries are handled confidentially and relate to
-        product evaluation, pilot deployment, governance review,
-        or strategic partnership discussion.
-      </p>
+    <p class="process-para">
+      Cohort-level safeguards, uniqueness thresholds, and
+      GDPR-aligned enforcement mechanisms operate continuously,
+      ensuring audit resilience and compliance stability
+      across long-term workforce planning horizons.
+    </p>
 
-      <!-- TAGS -->
-<div class="contact-tags">
-  <div class="tag-box">Privacy-Engineered</div>
-  <div class="tag-box">GDPR Aligned</div>
-  <div class="tag-box">AI Governance Ready</div>
-  <div class="tag-box">UK Focused</div>
-</div>
-
-      <div class="trust-strip">
-        Signal Retention · Cohort Privacy · Contract-Aware Controls
-      </div>
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="contact-right">
-
-      <div class="action-box">
-
-        <!-- Animated Border Light -->
-        <div class="border-light"></div>
-
-        <div class="privacy-badge">
-          🔐 Secure Channel
-        </div>
-
-        <h4>Start a Confidential Discussion</h4>
-
-        <p>
-          Request platform access, pilot validation,
-          or a technical briefing on the AFCJ
-          privacy-first analytics model.
-        </p>
-
-        <button class="contact-btn" onclick="showForm()">
-  CONTACT AFCJ
-</button>
-
-
-
-        <div class="response-time">
-          UK response within 1–2 business days
-        </div>
-      </div>
-
-    </div>
+    <p class="process-para">
+      The result is executive-ready recruitment intelligence
+      that supports forecasting, optimisation, and AI readiness
+      without compromising privacy integrity.
+    </p>
 
   </div>
-<div class="contact-modal" id="contactModal">
-  <div class="modal-content">
-    <h3>Confidential Enquiry</h3>
-    <textarea placeholder="Write your message here..."></textarea>
-    <button onclick="closeForm()">Close</button>
-  </div>
-</div>
 
 </section>
 
 <style>
-.contact-modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-}
 
-.modal-content{
-  background:white;
-  padding:30px;
-  width:90%;
-  max-width:400px;
-  border-radius:10px;
-}
-
-/* TAG CONTAINER */
-.contact-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-  margin-top:30px;
-}
-/* BADGE CONTAINER */
-.founder-badges{
-  margin-top:30px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-}
-
-/* BADGE BOX */
-.founder-badge{
+/* ===============================
+   SECTION BASE
+=================================*/
+.afcj-process-center{
+  background:linear-gradient(135deg,#0B1F3A,#081426);
+  padding:180px 8%;
+  text-align:center;
+  color:#ffffff;
   position:relative;
-  padding:10px 22px;
-  font-size:13px;
-  font-weight:600;
-  border-radius:30px;
-
-  background:#00C2A8;        /* INNER BACKGROUND */
-  color:#0B1F3A;              /* NAVY TEXT */
-  border:2px solid #0B1F3A;   /* NAVY BORDER */
-
   overflow:hidden;
 }
 
-
-/* HOVER EFFECT */
-.founder-badge:hover{
-  background:#0B1F3A;
-  color:#ffffff;
-  transition:0.3s ease;
-}
-/* TAG BOX */
-.tag-box{
-  position:relative;
-  padding:10px 18px;
-  font-size:13px;
-  font-weight:600;
-  border-radius:8px;
-  background:rgba(255,255,255,0.08);
-  color:#ffffff;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,0.15);
-  backdrop-filter:blur(8px);
-}
-
-/* HOVER EFFECT (subtle) */
-.tag-box:hover{
-  background:rgba(0,194,168,0.15);
-  transform:translateY(-2px);
-  transition:0.3s ease;
-}
-
-/* SECTION */
-.afcj-contact{
-  position:relative;
-  padding:120px 8%;
-  background:linear-gradient(135deg,#0B1F3A,#1E3A8A);
-  color:#ffffff;
-  overflow:hidden;
-}
-
-
-
-/* WRAPPER */
-.contact-wrapper{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.4fr 0.8fr;
-  gap:80px;
-  align-items:center;
-}
-
-/* TITLE */
-.contact-title{
-  font-size:38px;
-  font-weight:800;
-  margin-bottom:14px;
-}
-
-.contact-line{
-  width:90px;
-  height:5px;
+/* Soft Glow Accent */
+.afcj-process-center::before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
   background:#00C2A8;
-  margin-bottom:26px;
+  opacity:0.05;
+  filter:blur(140px);
+  top:-200px;
+  left:50%;
+  transform:translateX(-50%);
 }
 
-.contact-text{
-  font-size:16px;
-  line-height:1.8;
-  margin-bottom:18px;
+/* ===============================
+   CONTAINER
+=================================*/
+.process-container{
+  max-width:850px;
+  margin:auto;
+  position:relative;
+  z-index:2;
 }
 
-.contact-text.muted{
-  opacity:0.8;
-}
-
-/* TAGS */
-.contact-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:30px;
-}
-
-.contact-tags span{
-  background:rgba(255,255,255,0.1);
-  padding:8px 14px;
-  border-radius:6px;
-  font-size:12px;
-  font-weight:600;
-  border:1px solid rgba(255,255,255,0.15);
-}
-
-/* TRUST STRIP */
-.trust-strip{
-  margin-top:40px;
-  padding:14px 20px;
-  background:rgba(0,194,168,0.15);
-  border-left:4px solid #00C2A8;
-  font-size:13px;
+/* ===============================
+   TITLE
+=================================*/
+.process-title{
+  font-size:46px;
+  font-weight:900;
+  margin-bottom:20px;
   letter-spacing:1px;
 }
 
-/* RIGHT */
-.contact-right{
-  display:flex;
-  justify-content:center;
+/* Divider */
+.process-divider{
+  width:120px;
+  height:4px;
+  background:#00C2A8;
+  margin:25px auto 60px;
+  box-shadow:0 0 25px rgba(0,194,168,0.6);
 }
 
-/* ACTION BOX */
-.action-box{
+/* ===============================
+   PARAGRAPHS
+=================================*/
+.process-para{
+  font-size:18px;
+  line-height:2;
+  color:#cbd5e1;
+  margin-bottom:35px;
+  transition:0.4s ease;
+}
+
+/* Subtle hover highlight */
+.process-para:hover{
+  color:#ffffff;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+=================================*/
+@media(max-width:900px){
+
+  .afcj-process-center{
+    padding:110px 6%;
+  }
+
+  .process-title{
+    font-size:28px;
+  }
+
+  .process-para{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+}
+
+</style>
+
+<!-- ===============================
+        WHY AFCJ – ULTRA MODEL
+=================================-->
+<section id="why" class="why-afcj-pro">
+
+  <!-- Background Glow Layers -->
+  <div class="why-glow glow-left"></div>
+  <div class="why-glow glow-right"></div>
+
+  <div class="why-container">
+
+    <!-- HEADER -->
+    <div class="why-header">
+      <h2>Why AFCJ</h2>
+      <div class="animated-divider"></div>
+
+      <p class="why-body">
+        Recruitment organisations face a structural conflict between
+        long-term intelligence and regulatory exposure. Traditional
+        systems either delete valuable historical data or retain
+        sensitive records that increase compliance risk.
+      </p>
+
+      <p class="why-body light">
+        AFCJ eliminates this trade-off by preserving behavioural
+        signal without storing identifiable information — enabling
+        secure, governance-aligned, multi-year recruitment insight.
+      </p>
+    </div>
+
+    <!-- GRID -->
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="icon">🛡️</div>
+        <h3>Zero PII Architecture</h3>
+        <p>
+          Convert recruitment events into irreversible
+          analytical signals without storing personal data.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">📊</div>
+        <h3>Multi-Year Visibility</h3>
+        <p>
+          Maintain trend intelligence across hiring
+          cycles without regulatory risk.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">⚖️</div>
+        <h3>Governance Embedded</h3>
+        <p>
+          Cohort safeguards, contract-aware controls,
+          and audit-ready compliance structure.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">🤖</div>
+        <h3>AI Optimisation Ready</h3>
+        <p>
+          Structured for predictive modelling,
+          optimisation and responsible automation.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">🔗</div>
+        <h3>ATS Integration</h3>
+        <p>
+          Direct integration with recruitment
+          systems and enterprise CRMs.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">📈</div>
+        <h3>Executive Intelligence</h3>
+        <p>
+          Strategic insight for board-level
+          workforce planning and forecasting.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+/* ===============================
+   SECTION BASE
+=================================*/
+.why-afcj-pro{
   position:relative;
-  width:100%;
-  padding:50px;
-  background:rgba(255, 255, 255, 0.08);
-  backdrop-filter:blur(18px);
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,0.2);
-  text-align:center;
+  padding:160px 8%;
+  background:#050A14;
+  color:#ffffff;
   overflow:hidden;
 }
 
-/* TRAVELLING BORDER LIGHT */
-.border-light{
+/* ===============================
+   BACKGROUND GLOW
+=================================*/
+.why-glow{
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.15;
+  z-index:0;
+}
+
+.glow-left{
+  background:#00C2A8;
+  top:-150px;
+  left:-150px;
+}
+
+.glow-right{
+  background:#1E3A8A;
+  bottom:-150px;
+  right:-150px;
+}
+
+/* ===============================
+   CONTAINER
+=================================*/
+.why-container{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ===============================
+   HEADER
+=================================*/
+.why-header{
+  text-align:center;
+  margin-bottom:100px;
+}
+
+.why-header h2{
+  font-size:44px;
+  font-weight:900;
+  background:linear-gradient(90deg,#00C2A8,#6EE7D8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:20px;
+}
+
+/* Animated Divider */
+.animated-divider{
+  width:120px;
+  height:4px;
+  margin:0 auto 40px;
+  background:linear-gradient(90deg, transparent, #00C2A8, transparent);
+  background-size:300% 300%;
+  animation:dividerMove 4s linear infinite;
+}
+
+@keyframes dividerMove{
+  0%{background-position:0% 50%;}
+  100%{background-position:300% 50%;}
+}
+
+.why-body{
+  max-width:800px;
+  margin:0 auto 20px;
+  font-size:16px;
+  line-height:1.9;
+  opacity:0.85;
+}
+
+.why-body.light{
+  opacity:0.65;
+}
+
+/* ===============================
+   GRID
+=================================*/
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+/* ===============================
+   CARD
+=================================*/
+.why-card{
+  position:relative;
+  padding:45px 35px;
+  background:rgba(255,255,255,0.05);
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.12);
+  backdrop-filter:blur(12px);
+  transition:0.4s ease;
+  overflow:hidden;
+}
+
+/* Travelling Light Border */
+.why-card::before{
+  content:"";
   position:absolute;
   inset:0;
   border-radius:18px;
-  padding:2px;
+  padding:1.5px;
   background:linear-gradient(90deg, transparent, #00C2A8, transparent);
   background-size:300% 300%;
-  animation:borderMove 4s linear infinite;
+  animation:cardLight 6s linear infinite;
+
   mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -1521,244 +1622,381 @@ document.addEventListener("DOMContentLoaded", function(){
   -webkit-mask-composite:xor;
 }
 
-@keyframes borderMove{
+@keyframes cardLight{
   0%{background-position:0% 50%;}
   100%{background-position:300% 50%;}
 }
 
-/* PRIVACY BADGE */
-.privacy-badge{
-  display:inline-block;
-  background:#00C2A8;
-  color:#0A0F1C;
-  font-weight:700;
-  padding:6px 16px;
-  border-radius:999px;
-  font-size:12px;
-  margin-bottom:18px;
+/* ICON */
+.why-card .icon{
+  font-size:30px;
+  margin-bottom:20px;
 }
 
-.contact-btn{
-  display:inline-block;
-  margin-top:26px;
-  padding:14px 42px;
+/* TITLE */
+.why-card h3{
+  font-size:18px;
+  margin-bottom:14px;
+}
+
+/* TEXT */
+.why-card p{
   font-size:14px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  background:#00C2A8;
-  border-radius:6px;
-  color:#0A0F1C;
-  text-decoration:none;
-  transition:0.3s ease;
+  line-height:1.8;
+  opacity:0.75;
 }
 
-
-.contact-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* RESPONSE */
-.response-time{
-  margin-top:16px;
-  font-size:12px;
-  opacity:0.8;
+/* Hover Magic */
+.why-card:hover{
+  transform:translateY(-10px);
+  background:rgba(0,194,168,0.12);
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
 }
 
 /* ===============================
-   FULL MOBILE RESPONSIVE CONTACT
+   MOBILE
 =================================*/
-@media (max-width: 900px){
+@media(max-width:900px){
 
-  /* SECTION */
-  .afcj-contact{
-    padding:80px 5%;
+  .why-afcj-pro{
+    padding:100px 6%;
   }
 
-  /* OUTER FRAME */
-  .outer-frame{
-    inset:10px;
-    border-radius:14px;
-  }
-
-  /* WRAPPER STACK */
-  .contact-wrapper{
+  .why-grid{
     grid-template-columns:1fr;
-    gap:35px;
-    text-align:center;
+    gap:30px;
   }
 
-  /* LEFT SIDE */
-  .contact-left{
-    width:100%;
+  .why-header h2{
+    font-size:26px;
   }
 
-  .contact-title{
-    font-size:24px;
-    line-height:1.3;
-    margin-bottom:12px;
-  }
-
-  .contact-line{
-    width:70px;
-    height:4px;
-    margin:0 auto 20px;
-  }
-
-  .contact-text{
+  .why-body{
     font-size:14px;
-    line-height:1.7;
-    margin-bottom:16px;
   }
 
-  /* TAGS */
-  .contact-tags{
-    justify-content:center;
-    gap:10px;
-    margin-top:20px;
-  }
-
-  .tag-box{
-    font-size:11px;
-    padding:7px 12px;
-    border-radius:6px;
-  }
-
-  /* TRUST STRIP */
-  .trust-strip{
-    margin-top:25px;
-    padding:10px 12px;
-    font-size:11px;
-    letter-spacing:0.5px;
-  }
-
-  /* RIGHT SIDE */
-  .contact-right{
-    width:100%;
-    justify-content:center;
-  }
-
-  /* ACTION BOX */
-  .action-box{
-    padding:25px 20px;
-    border-radius:12px;
-    width:100%;
-  }
-
-  .privacy-badge{
-    font-size:11px;
-    padding:5px 14px;
-    margin-bottom:15px;
-  }
-
-  .action-box h4{
-    font-size:17px;
-    margin-bottom:10px;
-  }
-
-  .action-box p{
-    font-size:13px;
-    line-height:1.6;
-    margin-bottom:18px;
-  }
-
-  /* BUTTON */
-  .contact-btn{
-    width:100%;
-    max-width:260px;
-    padding:14px 0;
-    font-size:13px;
-    letter-spacing:1px;
-    margin:0 auto;
-  }
-
-  .response-time{
-    font-size:10px;
-    margin-top:12px;
-  }
-
-  /* PERFORMANCE FIX */
-  .border-light{
-    animation:none;
-  }
-
-  .outer-frame::before{
-    animation:none;
+  .why-card{
+    padding:30px 20px;
   }
 
 }
-
-
-  /* BUTTON FULL WIDTH */
-  .contact-btn{
-    width:100%;
-    max-width:280px;
-    padding:14px 0;
-    font-size:14px;
-    letter-spacing:1px;
-  }
-
-  .response-time{
-    font-size:11px;
-  }
 
 </style>
-<script>
-function showForm(){
-  document.getElementById("contactModal").style.display="flex";
+<!-- ===============================
+        MINIMAL FAQ SECTION
+=================================-->
+<!-- ===============================
+        MINIMAL FAQ SECTION
+=================================-->
+<section class="faq-minimal">
+
+  <div class="faq-container">
+
+    <div class="faq-head">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-line"></div>
+      <p>
+        Clear answers about AFCJ’s privacy-engineered recruitment
+        analytics infrastructure, governance model, and long-term
+        workforce intelligence strategy.
+      </p>
+    </div>
+
+    <div class="faq-list">
+
+      <!-- 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How does AFCJ eliminate long-term PII retention?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          AFCJ converts recruitment lifecycle events into anonymised,
+          non-identifiable analytical signals. Instead of retaining
+          candidate records, the platform preserves behavioural insight,
+          ensuring regulatory resilience while reducing compliance risk.
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Can AFCJ integrate with existing ATS systems?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Yes. AFCJ integrates with ATS and CRM environments,
+          transforming structured recruitment data into privacy-safe
+          intelligence without disrupting existing workflows.
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Is AFCJ aligned with GDPR requirements?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          The platform is architected under GDPR-aligned principles,
+          including cohort safeguards, governance enforcement,
+          audit-readiness controls, and contract-aware data handling.
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Does AFCJ support AI-driven optimisation?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Yes. The signal-based design enables responsible AI modelling,
+          recruitment performance forecasting, and funnel optimisation
+          without exposing personal candidate data.
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          What problem does AFCJ solve in recruitment analytics?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Modern ATS systems often delete candidate records after
+          12–18 months, removing long-term visibility into hiring
+          performance. AFCJ preserves multi-year strategic intelligence
+          without retaining sensitive personal information.
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Who is AFCJ designed for?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          AFCJ is built for UK recruitment agencies, RPO providers,
+          and enterprise talent teams that require long-term
+          performance visibility while maintaining strict compliance
+          and governance standards.
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          How does AFCJ improve executive decision-making?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          By converting recruitment activity into durable analytical
+          signal, AFCJ enables executives to track funnel efficiency,
+          recruiter performance, cohort behaviour, and hiring trends
+          over extended time horizons without privacy exposure.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* ===============================
+   BASE SECTION
+=================================*/
+.faq-minimal{
+  background:#ffffff;
+  padding:150px 8%;
 }
 
-function closeForm(){
-  document.getElementById("contactModal").style.display="none";
+/* CONTAINER */
+.faq-container{
+  max-width:850px;
+  margin:auto;
 }
+
+/* HEADER */
+.faq-head{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.faq-head h2{
+  font-size:42px;
+  font-weight:900;
+  color:#0B1F3A;
+  margin-bottom:20px;
+}
+
+.faq-line{
+  width:100px;
+  height:3px;
+  margin:0 auto 30px;
+  background:#00C2A8;
+}
+
+.faq-head p{
+  font-size:16px;
+  opacity:0.7;
+  line-height:1.8;
+}
+
+/* ===============================
+   FAQ LIST (NO BOXES)
+=================================*/
+.faq-item{
+  border-bottom:1px solid #e5e7eb;
+  padding:28px 0;
+  position:relative;
+}
+
+/* QUESTION */
+.faq-question{
+  width:100%;
+  background:none;
+  border:none;
+  font-size:18px;
+  font-weight:700;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  color:#0B1F3A;
+  padding:0;
+}
+
+.faq-question span{
+  font-size:22px;
+  color:#00C2A8;
+  transition:0.3s ease;
+}
+
+/* ANSWER */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  font-size:15px;
+  line-height:1.9;
+  color:#374151;
+  transition:all 0.4s ease;
+  padding-top:0;
+}
+
+/* ACTIVE STATE */
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding-top:15px;
+}
+
+.faq-item.active .faq-question span{
+  transform:rotate(45deg);
+}
+
+/* HOVER EFFECT (LINE GLOW) */
+.faq-item:hover{
+  border-bottom:1px solid #00C2A8;
+}
+
+/* ===============================
+   MOBILE
+=================================*/
+@media(max-width:900px){
+
+  .faq-minimal{
+    padding:100px 6%;
+  }
+
+  .faq-head h2{
+    font-size:26px;
+  }
+
+  .faq-head p{
+    font-size:14px;
+  }
+
+  .faq-question{
+    font-size:15px;
+  }
+
+  .faq-answer{
+    font-size:13px;
+  }
+
+}
+
+</style>
+
+<script>
+
+document.querySelectorAll(".faq-question").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const item = btn.parentElement;
+    item.classList.toggle("active");
+  });
+});
+
 </script>
-<!-- CONTACT SECTION -->
+
+<!-- ===============================
+     PREMIUM CONTACT SECTION
+=================================-->
 <section id="contact" class="afcj-contact">
+
+  <!-- Background Glow Orbs -->
+  <div class="contact-orb orb-1"></div>
+  <div class="contact-orb orb-2"></div>
 
   <div class="contact-wrapper">
 
-    <!-- LEFT SIDE -->
+    <!-- LEFT CONTENT -->
     <div class="contact-left">
-      <h3 class="contact-title">Confidential Contact</h3>
+      <h3 class="contact-title">
+        Confidential <span>Engagement</span>
+      </h3>
+
       <div class="contact-line"></div>
 
       <p class="contact-text">
-        AFCJ operates as a privacy-first recruitment analytics
-        infrastructure platform for UK agencies and enterprise teams.
+        AFCJ provides privacy-first recruitment analytics infrastructure
+        engineered for UK agencies and enterprise hiring ecosystems.
       </p>
 
       <p class="contact-text muted">
-        All enquiries are handled confidentially and relate to
-        product evaluation, pilot deployment, governance review,
-        or strategic partnership discussion.
+        All discussions are confidential and relate to
+        platform evaluation, pilot deployment, governance review,
+        or strategic partnership exploration.
       </p>
 
       <div class="trust-strip">
-        Signal Retention · Cohort Privacy · Contract-Aware Controls
+        GDPR Aligned · Signal Retention · Cohort Privacy Controls
       </div>
     </div>
-<!-- TAGS -->
-<div class="contact-tags">
-  <div class="tag-box">Privacy-Engineered</div>
-  <div class="tag-box">GDPR Aligned</div>
-  <div class="tag-box">AI Governance Ready</div>
-  <div class="tag-box">UK Focused</div>
-</div>
-    <!-- RIGHT SIDE -->
+
+    <!-- RIGHT PREMIUM BOX -->
     <div class="contact-right">
 
       <div class="action-box">
 
+        <!-- Animated Border -->
+        <div class="box-border"></div>
+
         <div class="privacy-badge">
-          Secure Channel
+          🔐 Secure Channel
         </div>
 
-        <h4>Start a Confidential Discussion</h4>
+        <h4>Start a Strategic Discussion</h4>
 
         <p>
-          Request platform access, pilot validation,
-          or a technical briefing on the AFCJ
-          privacy-first analytics model.
+          Request platform access, architecture overview,
+          or pilot validation briefing.
         </p>
 
         <!-- WORKING MAIL BUTTON -->
@@ -1783,38 +2021,86 @@ function closeForm(){
 
 <style>
 
+/* ===============================
+   SECTION BASE
+=================================*/
 .afcj-contact{
-  padding:120px 8%;
-  background:linear-gradient(135deg,#0B1F3A,#1E3A8A);
+  position:relative;
+  padding:150px 8%;
+  background:linear-gradient(135deg,#0B1F3A,#162F5C);
   color:#ffffff;
+  overflow:hidden;
 }
 
+/* ===============================
+   BACKGROUND ORBS
+=================================*/
+.contact-orb{
+  position:absolute;
+  width:450px;
+  height:450px;
+  border-radius:50%;
+  filter:blur(140px);
+  opacity:0.15;
+  animation:floatOrb 12s ease-in-out infinite alternate;
+}
+
+.orb-1{
+  background:#00C2A8;
+  top:-100px;
+  left:-100px;
+}
+
+.orb-2{
+  background:#6EE7D8;
+  bottom:-120px;
+  right:-120px;
+}
+
+@keyframes floatOrb{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(50px);}
+}
+
+/* ===============================
+   WRAPPER
+=================================*/
 .contact-wrapper{
-  max-width:1100px;
+  position:relative;
+  z-index:2;
+  max-width:1150px;
   margin:auto;
   display:grid;
-  grid-template-columns:1.4fr 0.8fr;
-  gap:80px;
+  grid-template-columns:1.4fr 0.9fr;
+  gap:90px;
   align-items:center;
 }
 
+/* ===============================
+   LEFT SIDE
+=================================*/
 .contact-title{
-  font-size:36px;
-  font-weight:800;
-  margin-bottom:14px;
+  font-size:40px;
+  font-weight:900;
+}
+
+.contact-title span{
+  background:linear-gradient(90deg,#00C2A8,#6EE7D8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .contact-line{
-  width:80px;
+  width:90px;
   height:4px;
   background:#00C2A8;
-  margin-bottom:24px;
+  margin:20px 0 30px;
 }
 
 .contact-text{
-  font-size:16px;
-  line-height:1.8;
-  margin-bottom:18px;
+  font-size:17px;
+  line-height:1.9;
+  margin-bottom:20px;
 }
 
 .contact-text.muted{
@@ -1822,49 +2108,108 @@ function closeForm(){
 }
 
 .trust-strip{
-  margin-top:30px;
-  padding:12px 18px;
+  margin-top:35px;
+  padding:16px 22px;
   background:rgba(0,194,168,0.15);
   border-left:4px solid #00C2A8;
-  font-size:13px;
+  font-size:14px;
+  border-radius:6px;
 }
 
+/* ===============================
+   RIGHT PREMIUM BOX
+=================================*/
 .contact-right{
   display:flex;
   justify-content:center;
 }
 
 .action-box{
-  padding:45px;
+  position:relative;
+  padding:55px 45px;
   background:rgba(255,255,255,0.08);
-  border-radius:16px;
+  backdrop-filter:blur(18px);
+  border-radius:22px;
   border:1px solid rgba(255,255,255,0.2);
   text-align:center;
+  overflow:hidden;
+  transition:0.4s ease;
 }
 
+.action-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
+
+/* ===============================
+   TRAVELLING BORDER
+=================================*/
+.box-border{
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  padding:2px;
+  background:linear-gradient(90deg, transparent, #00C2A8, transparent);
+  background-size:300% 300%;
+  animation:borderTravel 4s linear infinite;
+
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  -webkit-mask-composite:xor;
+}
+
+@keyframes borderTravel{
+  0%{background-position:0% 50%;}
+  100%{background-position:300% 50%;}
+}
+
+/* ===============================
+   BADGE
+=================================*/
 .privacy-badge{
   display:inline-block;
   background:#00C2A8;
   color:#0B1F3A;
   font-weight:700;
-  padding:6px 16px;
+  padding:7px 18px;
   border-radius:30px;
   font-size:12px;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
+/* ===============================
+   BUTTON
+=================================*/
 .contact-btn{
   display:inline-block;
-  margin-top:24px;
-  padding:14px 40px;
+  margin-top:28px;
+  padding:16px 44px;
   font-size:14px;
   font-weight:800;
   letter-spacing:1px;
   background:#00C2A8;
-  border-radius:6px;
+  border-radius:8px;
   color:#0B1F3A;
   text-decoration:none;
+  position:relative;
+  overflow:hidden;
   transition:0.3s ease;
+}
+
+/* Shimmer */
+.contact-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+  transform:translateX(-100%);
+  transition:0.7s ease;
+}
+
+.contact-btn:hover::after{
+  transform:translateX(100%);
 }
 
 .contact-btn:hover{
@@ -1873,26 +2218,32 @@ function closeForm(){
 }
 
 .response-time{
-  margin-top:14px;
+  margin-top:16px;
   font-size:12px;
   opacity:0.8;
 }
 
-/* MOBILE */
+/* ===============================
+   MOBILE
+=================================*/
 @media(max-width:900px){
+
+  .afcj-contact{
+    padding:100px 6%;
+  }
 
   .contact-wrapper{
     grid-template-columns:1fr;
-    gap:40px;
+    gap:50px;
     text-align:center;
   }
 
   .contact-title{
-    font-size:24px;
+    font-size:26px;
   }
 
   .action-box{
-    padding:30px;
+    padding:35px 25px;
   }
 
   .contact-btn{
